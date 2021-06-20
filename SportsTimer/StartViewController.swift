@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class StartViewController: UIViewController {
+    
+    @IBOutlet weak var addButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,5 +18,7 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func addDidTap(_ sender: UIButton) {
+    }
 }
 
