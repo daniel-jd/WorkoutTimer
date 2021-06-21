@@ -10,15 +10,18 @@ import UIKit
 class StartViewController: UIViewController {
     
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        addButton.layer.cornerRadius = addButton.frame.width / 2
     }
 
 
     @IBAction func addDidTap(_ sender: UIButton) {
+        print("Add Button Pressed 🐣")
     }
 }
 

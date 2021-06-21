@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A53778F82680776400FF54A1 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53778F72680776400FF54A1 /* TimerViewController.swift */; };
+		A53778FB2680786100FF54A1 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53778FA2680786100FF54A1 /* ExercisesViewController.swift */; };
 		A5E80087267DCA9700C5D034 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E80086267DCA9700C5D034 /* AppDelegate.swift */; };
 		A5E80089267DCA9700C5D034 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E80088267DCA9700C5D034 /* SceneDelegate.swift */; };
 		A5E8008B267DCA9700C5D034 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E8008A267DCA9700C5D034 /* StartViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A53778F72680776400FF54A1 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		A53778FA2680786100FF54A1 /* ExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
 		A5E80083267DCA9700C5D034 /* SportsTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E80086267DCA9700C5D034 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5E80088267DCA9700C5D034 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				A5E80086267DCA9700C5D034 /* AppDelegate.swift */,
 				A5E80088267DCA9700C5D034 /* SceneDelegate.swift */,
 				A5E8008A267DCA9700C5D034 /* StartViewController.swift */,
+				A53778FA2680786100FF54A1 /* ExercisesViewController.swift */,
+				A53778F72680776400FF54A1 /* TimerViewController.swift */,
 				A5E8008C267DCA9700C5D034 /* Main.storyboard */,
 				A5E8008F267DCA9A00C5D034 /* Assets.xcassets */,
 				A5E80091267DCA9A00C5D034 /* LaunchScreen.storyboard */,
@@ -137,9 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53778F82680776400FF54A1 /* TimerViewController.swift in Sources */,
 				A5E8008B267DCA9700C5D034 /* StartViewController.swift in Sources */,
 				A5E80087267DCA9700C5D034 /* AppDelegate.swift in Sources */,
 				A5E80089267DCA9700C5D034 /* SceneDelegate.swift in Sources */,
+				A53778FB2680786100FF54A1 /* ExercisesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
