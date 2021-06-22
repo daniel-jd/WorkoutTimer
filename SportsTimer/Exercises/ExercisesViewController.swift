@@ -18,7 +18,7 @@ class ExercisesViewController: UIViewController {
     private let timerVC = "TimerViewController"
     private let cellID = "ExerciseCell"
     private let cellNibName = "ExerciseTableViewCell"
-//     "ExerciseCell"
+    //     "ExerciseCell"
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startButton: UIButton!
@@ -32,9 +32,9 @@ class ExercisesViewController: UIViewController {
         startButton.layer.cornerRadius = startButton.frame.width / 2
         addMoreButton.layer.cornerRadius = addMoreButton.frame.width / 2
         
-        exerciseList.append(Exercise(name: "Push-ups", time: 30, restTime: 20))
-        exerciseList.append(Exercise(name: "Abs", time: 40, restTime: 25))
-        exerciseList.append(Exercise(name: "Jumps", time: 60, restTime: 30))
+        exerciseList.append(Exercise(name: "Push-ups", time: 10, restTime: 6))
+        exerciseList.append(Exercise(name: "Abs", time: 12, restTime: 8))
+        exerciseList.append(Exercise(name: "Jumps", time: 15, restTime: 10))
         
         tableView.register(UINib(nibName: cellNibName, bundle: nil), forCellReuseIdentifier: cellID)
         tableView.delegate = self
@@ -44,16 +44,16 @@ class ExercisesViewController: UIViewController {
     @IBAction func startDidTap(_ sender: Any) {
         // GO to timer screen
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: timerVC)
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: timerVC) as? TimerViewController {
+            vc.modalPresentationStyle = .fullScreen
+            vc.exercises = exerciseList
+            present(vc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func addMoreDidTap(_ sender: Any) {
         // Show add exercise AlertViewController
     }
-    
-    
     
 }
 
