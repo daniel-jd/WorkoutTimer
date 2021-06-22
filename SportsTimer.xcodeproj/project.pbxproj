@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5129C912681BA7E0021A693 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5129C8F2681BA7E0021A693 /* ExerciseTableViewCell.swift */; };
+		A5129C922681BA7E0021A693 /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5129C902681BA7E0021A693 /* ExerciseTableViewCell.xib */; };
 		A53778F82680776400FF54A1 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53778F72680776400FF54A1 /* TimerViewController.swift */; };
 		A53778FB2680786100FF54A1 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53778FA2680786100FF54A1 /* ExercisesViewController.swift */; };
 		A5E80087267DCA9700C5D034 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E80086267DCA9700C5D034 /* AppDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5129C8F2681BA7E0021A693 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		A5129C902681BA7E0021A693 /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
 		A53778F72680776400FF54A1 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		A53778FA2680786100FF54A1 /* ExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
 		A5E80083267DCA9700C5D034 /* SportsTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5129C8E2681BA550021A693 /* Exercises */ = {
+			isa = PBXGroup;
+			children = (
+				A53778FA2680786100FF54A1 /* ExercisesViewController.swift */,
+				A5129C942681BA920021A693 /* Cell */,
+			);
+			path = Exercises;
+			sourceTree = "<group>";
+		};
+		A5129C942681BA920021A693 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A5129C8F2681BA7E0021A693 /* ExerciseTableViewCell.swift */,
+				A5129C902681BA7E0021A693 /* ExerciseTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		A5E8007A267DCA9700C5D034 = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +85,7 @@
 				A5E80086267DCA9700C5D034 /* AppDelegate.swift */,
 				A5E80088267DCA9700C5D034 /* SceneDelegate.swift */,
 				A5E8008A267DCA9700C5D034 /* StartViewController.swift */,
-				A53778FA2680786100FF54A1 /* ExercisesViewController.swift */,
+				A5129C8E2681BA550021A693 /* Exercises */,
 				A53778F72680776400FF54A1 /* TimerViewController.swift */,
 				A5E8008C267DCA9700C5D034 /* Main.storyboard */,
 				A5E8008F267DCA9A00C5D034 /* Assets.xcassets */,
@@ -131,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E80093267DCA9A00C5D034 /* LaunchScreen.storyboard in Resources */,
+				A5129C922681BA7E0021A693 /* ExerciseTableViewCell.xib in Resources */,
 				A5E80090267DCA9A00C5D034 /* Assets.xcassets in Resources */,
 				A5E8008E267DCA9700C5D034 /* Main.storyboard in Resources */,
 			);
@@ -146,6 +169,7 @@
 				A53778F82680776400FF54A1 /* TimerViewController.swift in Sources */,
 				A5E8008B267DCA9700C5D034 /* StartViewController.swift in Sources */,
 				A5E80087267DCA9700C5D034 /* AppDelegate.swift in Sources */,
+				A5129C912681BA7E0021A693 /* ExerciseTableViewCell.swift in Sources */,
 				A5E80089267DCA9700C5D034 /* SceneDelegate.swift in Sources */,
 				A53778FB2680786100FF54A1 /* ExercisesViewController.swift in Sources */,
 			);
