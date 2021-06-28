@@ -17,6 +17,7 @@
 		A5E8008E267DCA9700C5D034 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E8008C267DCA9700C5D034 /* Main.storyboard */; };
 		A5E80090267DCA9A00C5D034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E8008F267DCA9A00C5D034 /* Assets.xcassets */; };
 		A5E80093267DCA9A00C5D034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E80091267DCA9A00C5D034 /* LaunchScreen.storyboard */; };
+		A5F7EBE22689FB7E00327713 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7EBE12689FB7E00327713 /* Exercise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A5E8008F267DCA9A00C5D034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5E80092267DCA9A00C5D034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5E80094267DCA9A00C5D034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5F7EBE12689FB7E00327713 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A5D4B1902689DC2400D66668 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				A53778F72680776400FF54A1 /* TimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		A5D4B1922689DD6B00D66668 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				A5E8008A267DCA9700C5D034 /* StartViewController.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
 		A5E8007A267DCA9700C5D034 = {
 			isa = PBXGroup;
 			children = (
@@ -84,9 +102,10 @@
 			children = (
 				A5E80086267DCA9700C5D034 /* AppDelegate.swift */,
 				A5E80088267DCA9700C5D034 /* SceneDelegate.swift */,
-				A5E8008A267DCA9700C5D034 /* StartViewController.swift */,
+				A5F7EBE12689FB7E00327713 /* Exercise.swift */,
+				A5D4B1922689DD6B00D66668 /* Start */,
 				A5129C8E2681BA550021A693 /* Exercises */,
-				A53778F72680776400FF54A1 /* TimerViewController.swift */,
+				A5D4B1902689DC2400D66668 /* Timer */,
 				A5E8008C267DCA9700C5D034 /* Main.storyboard */,
 				A5E8008F267DCA9A00C5D034 /* Assets.xcassets */,
 				A5E80091267DCA9A00C5D034 /* LaunchScreen.storyboard */,
@@ -171,6 +190,7 @@
 				A5E80087267DCA9700C5D034 /* AppDelegate.swift in Sources */,
 				A5129C912681BA7E0021A693 /* ExerciseTableViewCell.swift in Sources */,
 				A5E80089267DCA9700C5D034 /* SceneDelegate.swift in Sources */,
+				A5F7EBE22689FB7E00327713 /* Exercise.swift in Sources */,
 				A53778FB2680786100FF54A1 /* ExercisesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

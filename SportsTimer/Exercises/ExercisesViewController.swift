@@ -7,18 +7,12 @@
 
 import UIKit
 
-struct Exercise {
-    var name: String
-    var time: Int
-    var restTime: Int
-}
-
 class ExercisesViewController: UIViewController {
     
     private let timerVC = "TimerViewController"
+    private let startVC = "StartViewController"
     private let cellID = "ExerciseCell"
     private let cellNibName = "ExerciseTableViewCell"
-    //     "ExerciseCell"
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startButton: UIButton!
@@ -28,13 +22,9 @@ class ExercisesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         startButton.layer.cornerRadius = startButton.frame.width / 2
         addMoreButton.layer.cornerRadius = addMoreButton.frame.width / 2
-        
-        exerciseList.append(Exercise(name: "Push-ups", time: 10, restTime: 6))
-        exerciseList.append(Exercise(name: "Abs", time: 12, restTime: 8))
-        exerciseList.append(Exercise(name: "Jumps", time: 15, restTime: 10))
         
         tableView.register(UINib(nibName: cellNibName, bundle: nil), forCellReuseIdentifier: cellID)
         tableView.delegate = self
@@ -42,29 +32,38 @@ class ExercisesViewController: UIViewController {
     }
     
     @IBAction func startDidTap(_ sender: Any) {
-        // GO to timer screen
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: timerVC) as? TimerViewController {
-            vc.modalPresentationStyle = .fullScreen
-            vc.exercises = exerciseList
-            present(vc, animated: true, completion: nil)
+        if exerciseList.count != 0 {
+            // GO to timer screen
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let vc = storyboard.instantiateViewController(withIdentifier: timerVC) as? TimerViewController {
+                vc.modalPresentationStyle = .fullScreen
+                vc.exercises = exerciseList
+                present(vc, animated: true, completion: nil)
+            }
         }
     }
     
     @IBAction func addMoreDidTap(_ sender: Any) {
-        // Show add exercise AlertViewController
+        // Show StartViewController and call Add function
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: startVC) as? StartViewController {
+            vc.modalPresentationStyle = .fullScreen
+            vc.delegate = self
+            present(vc, animated: true, completion: nil)
+            vc.addExercise()
+        }
     }
     
-}
+} // class
 
 
 // MARK: - TableView Delegate
 extension ExercisesViewController: UITableViewDelegate {
-    
 }
 
 // MARK: - TableView DataSource
 extension ExercisesViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exerciseList.count
     }
@@ -79,8 +78,14 @@ extension ExercisesViewController: UITableViewDataSource {
         } else {
             return UITableViewCell()
         }
-        
     }
     
-    
+}
+
+// MARK: - StartViewController Delegate
+extension ExercisesViewController: StartViewControllerDelegate {
+    func addedExercises(exercises: [Exercise]) {
+        exerciseList.append(contentsOf: exercises)
+        tableView.reloadData()
+    }
 }

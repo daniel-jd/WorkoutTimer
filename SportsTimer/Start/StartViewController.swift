@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol StartViewControllerDelegate: AnyObject {
+    func addedExercises(exercises: [Exercise])
+}
+
 class StartViewController: UIViewController {
     
     private let exercisesVC = "ExercisesViewController"
@@ -14,15 +18,21 @@ class StartViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var exercises: [Exercise] = []
+    weak var delegate: StartViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         addButton.layer.cornerRadius = addButton.frame.width / 2
     }
-
-
-    @IBAction func addDidTap(_ sender: UIButton) {
+    
+    @IBAction func letsGoPressed(_ sender: Any) {
+        delegate?.addedExercises(exercises: exercises)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func addExercise() {
         
         // 1.
         var exerciseTextField: UITextField?
@@ -43,14 +53,12 @@ class StartViewController: UIViewController {
             guard let exercise = exerciseTextField?.text,
                   let exTime = exTimeTextField?.text,
                   let restTime = restTimeTextField?.text
-            else { return }
+            else {
+                print("⚠️ input error?")
+                return
+            }
             
-            // Goto ExercisesViewController
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: self!.exercisesVC) as? ExercisesViewController
-            vc?.exerciseList.append(Exercise(name: exercise, time: Int(exTime)!, restTime: Int(restTime)!))
-            vc?.modalPresentationStyle = .fullScreen
-            self!.present(vc!, animated: true, completion: nil)
+            self?.exercises.append(Exercise(name: exercise, time: Int(exTime)!, restTime: Int(restTime)!))
         }
         
         let cancelExerciseAction = UIAlertAction(
@@ -67,13 +75,13 @@ class StartViewController: UIViewController {
         alertController.addTextField {
             (exerciseTime) -> Void in
             exTimeTextField = exerciseTime
-            exTimeTextField?.placeholder = "Time for exercise"
+            exTimeTextField?.placeholder = "Exercise time"
         }
         
         alertController.addTextField {
             (restTime) -> Void in
             restTimeTextField = restTime
-            restTimeTextField?.placeholder = "Time for rest"
+            restTimeTextField?.placeholder = "Rest time"
         }
 
         // 5.
@@ -81,7 +89,11 @@ class StartViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
         
         alertController.addAction(cancelExerciseAction)
-        
     }
-}
+
+    @IBAction func addDidTap(_ sender: UIButton) {
+        addExercise()
+    }
+    
+} // class
 
