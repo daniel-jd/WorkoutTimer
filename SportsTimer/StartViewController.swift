@@ -40,29 +40,17 @@ class StartViewController: UIViewController {
         title: "Add", style: .default) { [weak self]
             (action) -> Void in
 
-            if let exercise = exerciseTextField?.text {
-                print("Exercise name = \(exercise)")
-            } else {
-                print("No Exercise entered")
-            }
-
-            if let exTime = exTimeTextField?.text {
-                print("Time for exercise = \(exTime)")
-            } else {
-                print("No time entered")
-            }
-            
-            if let restTime = restTimeTextField?.text {
-                print("Time for rest = \(restTime)")
-            } else {
-                print("No time entered")
-            }
+            guard let exercise = exerciseTextField?.text,
+                  let exTime = exTimeTextField?.text,
+                  let restTime = restTimeTextField?.text
+            else { return }
             
             // Goto ExercisesViewController
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: self!.exercisesVC)
-            vc.modalPresentationStyle = .fullScreen
-            self!.present(vc, animated: true, completion: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: self!.exercisesVC) as? ExercisesViewController
+            vc?.exerciseList.append(Exercise(name: exercise, time: Int(exTime)!, restTime: Int(restTime)!))
+            vc?.modalPresentationStyle = .fullScreen
+            self!.present(vc!, animated: true, completion: nil)
         }
         
         let cancelExerciseAction = UIAlertAction(
@@ -93,9 +81,6 @@ class StartViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
         
         alertController.addAction(cancelExerciseAction)
-        
-        // TODO: Add exercise to exerciseList
-        //exerciseList.append(Exercise(name: "Name", time: 30))
         
     }
 }

@@ -26,9 +26,7 @@ class TimerViewController: UIViewController {
         restTime = exercises[0].restTime
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
-        
-        //            let thread = Thread(target: self, selector: #selector(thread1), object: nil)
-        //            thread.start()
+
     }
     
     override func viewDidLayoutSubviews() {
@@ -45,15 +43,6 @@ class TimerViewController: UIViewController {
             }
         }
     }
-    
-    // MARK: Timer
-    //
-    
-    //    @objc func thread1() {
-    //        DispatchQueue.main.async {
-    //            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateLabel), userInfo: nil, repeats: true)
-    //        }
-    //    }
     
     @objc func updateLabel() {
         timerLabel.text = "\(time)"
